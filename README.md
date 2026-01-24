@@ -127,9 +127,11 @@ pip install -r requirements.txt
 Create a `.env` file using `.env.example` as reference and add:
 
 ```
-OPENROUTER_API_KEY=your_key_here
-GOOGLE_API_KEY=your_key_here
-DEEPGRAM_API_KEY=your_key_here
+USER_AGENT=myagent
+OPENROUTER_API_KEY=
+GOOGLE_API_KEY = 
+OPENROUTER_BASE_URL=
+DEEPGRAM_API_KEY=
 ```
 
 No paid API keys are required.
