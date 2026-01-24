@@ -62,6 +62,10 @@ Prompt + Retrieved Context
 
 ---
 
+## Architecture Diagram
+
+<img width="514" height="1345" alt="diagram-export-1-24-2026-7_17_04-PM" src="https://github.com/user-attachments/assets/6e3e3324-1524-4805-8558-6caf974b7f6b" />
+
 ## Tech Stack
 
 ### Backend / AI
