@@ -29,38 +29,6 @@ The agent is strictly constrained to answer only from the ingested Sunmarke webs
 * Secure API key handling via environment variables
 
 
-
-flowchart TB
-    U[User<br/>(Voice / Text)] -->|Voice| STT[Speech-to-Text<br/>(Deepgram)]
-    U -->|Text| Q[User Query]
-
-    STT --> Q
-
-    Q --> R[Retriever<br/>(FAISS Vector DB)]
-    R --> C[Relevant Context<br/>(Sunmarke Website)]
-
-    C --> P[Prompt Template<br/>(RAG)]
-    Q --> P
-
-    P --> G[Gemini<br/>(Google)]
-    P --> K[Kimi<br/>(Moonshot AI)]
-    P --> D[DeepSeek]
-
-    G --> TG[Text Response]
-    K --> TK[Text Response]
-    D --> TD[Text Response]
-
-    TG --> TTS1[Text-to-Speech<br/>(Edge TTS)]
-    TK --> TTS2[Text-to-Speech<br/>(Edge TTS)]
-    TD --> TTS3[Text-to-Speech<br/>(Edge TTS)]
-
-    TTS1 --> A1[Audio Output]
-    TTS2 --> A2[Audio Output]
-    TTS3 --> A3[Audio Output]
-
-
----
-
 ## Architecture Overview
 
 ```
