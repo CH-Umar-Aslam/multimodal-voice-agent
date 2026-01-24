@@ -82,7 +82,7 @@ Prompt + Retrieved Context
 
 ### Deployment
 
-* Streamlit-compatible platform (Railway / Render / similar)
+* Streamlit community cloud
 
 ---
 
