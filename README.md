@@ -1,8 +1,8 @@
-# Virtuans Voice Agent – AI Engineer Technical Assessment
+# Virtuans Voice Agent 
 
 ## Overview
 
-This project is a **voice-enabled Retrieval-Augmented Generation (RAG) AI agent** built for the Virtuans technical assessment.
+This project is a **voice-enabled Retrieval-Augmented Generation (RAG) AI agent** built for the Virtuans.
 The system ingests content from **Sunmarke School’s website** and allows users to ask questions via **voice or text**.
 The same query is processed simultaneously by **three different LLMs** and the responses are presented side by side in both **text and voice** format.
 
@@ -234,6 +234,6 @@ Approximate cost per 1,000 queries:
 
 ## Author
 
-**AI Engineer Technical Assessment – Virtuans**
+**AI Engineer – Virtuans**
 
 ---
