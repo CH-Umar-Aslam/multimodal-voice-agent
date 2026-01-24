@@ -1,8 +1,3 @@
-Below is a **clean, simple, professional README + brief documentation** that matches the assessment, your code, and the evaluator’s expectations.
-No emojis, clear architecture, easy run steps.
-
-You can copy-paste this directly into `README.md`.
-
 ---
 
 # Virtuans Voice Agent – AI Engineer Technical Assessment
@@ -240,10 +235,3 @@ Approximate cost per 1,000 queries:
 **AI Engineer Technical Assessment – Virtuans**
 
 ---
-
-If you want, I can also:
-
-* Tighten this further to 1-page version
-* Add a short architecture diagram image
-* Write a clean `.env.example`
-* Review `requirements.txt` for deployment safety
