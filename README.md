@@ -1,5 +1,3 @@
----
-
 # Virtuans Voice Agent – AI Engineer Technical Assessment
 
 ## Overview
