@@ -228,7 +228,6 @@ Approximate cost per 1,000 queries:
 * Deployed-ready Streamlit app
 * Clear documentation and architecture
 
----
 
 ## Author
 
