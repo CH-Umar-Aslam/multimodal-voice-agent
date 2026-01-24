@@ -30,12 +30,12 @@ def speech_to_text(audio_bytes):
     """
     try:
         # Initialize Deepgram Client
-        # FIX: We explicitly pass 'api_key=' to avoid the __init__ error
+        
         deepgram_key = os.getenv("DEEPGRAM_API_KEY")
         deepgram = DeepgramClient(api_key=deepgram_key)
 
         # Configure Options
-        # FIX: Using a simple dictionary is safer and works on all versions
+    
         options = {
             "model": "nova-2",
             "smart_format": True,
@@ -124,7 +124,6 @@ def setup_rag_chain():
         Question: {question}
 
         Response:"""
-        
     prompt = ChatPromptTemplate.from_template(template)
 
    # 3. Initialize Models (Fixed IDs + Max Tokens)
@@ -135,8 +134,7 @@ def setup_rag_chain():
     # --- UPDATED MODEL IDs HERE ---
     llm_gemini = ChatOpenAI(
         api_key=openrouter_key, 
-        model="google/gemini-2.5-flash", # Updated Free Model ID
-        # model="google/gemini-2.5-pro-exp-03-25:free", # Updated Free Model ID
+        model="google/gemini-2.5-flash",
         base_url=openrouter_base, 
         temperature=0,
         default_headers=headers,
@@ -145,7 +143,7 @@ def setup_rag_chain():
     )
     
     llm_deepseek = ChatOpenAI(
-        model="deepseek/deepseek-chat", # Standard DeepSeek ID
+        model="deepseek/deepseek-chat",
         api_key=openrouter_key, 
         base_url=openrouter_base, 
         temperature=0,
@@ -154,7 +152,7 @@ def setup_rag_chain():
     )
     
     llm_kimi = ChatOpenAI(
-        model="moonshotai/kimi-k2-0905", # Updated Vendor Prefix
+        model="moonshotai/kimi-k2-0905", 
         api_key=openrouter_key, 
         base_url=openrouter_base,
         temperature=0, 
@@ -180,26 +178,42 @@ def main():
     col_input, col_text = st.columns([1, 4])
     user_query = None
 
+       # --- INPUT: TEXT FALLBACK ---
+    with col_text:
+        if "text_input" not in st.session_state:
+            st.session_state["text_input"] = ""
+        text_input = st.text_input(
+                "Or type here:",
+                value=st.session_state["text_input"],
+                key="text_input_widget"
+            )
+        if text_input:
+            user_query = text_input
+            
     # --- INPUT: VOICE ---
     with col_input:
         st.write("Click to Speak:")
         audio = mic_recorder(
-            start_prompt="🎤 Record",
+            start_prompt="🎙️ Voice",
             stop_prompt="⏹️ Stop",
             key='recorder',
             just_once=False,
             use_container_width=True
         )
-        
-        if audio:
-            with st.spinner("Transcribing..."):
-                user_query = speech_to_text(audio['bytes'])
+    
+    if audio:
+        with st.spinner("Transcribing..."):
+            user_query = speech_to_text(audio['bytes'])
+            # Clear text input after voice transcription
+        st.session_state["text_input"] = ""
 
-    # --- INPUT: TEXT FALLBACK ---
-    with col_text:
-        text_input = st.text_input("Or type here:", value=user_query if user_query else "")
-        if text_input:
-            user_query = text_input
+    elif text_input:
+        user_query = text_input
+        # Clear text input after submission
+        st.session_state["text_input"] = ""
+
+
+ 
 
     # --- PROCESSING ---
     if user_query:
@@ -238,7 +252,7 @@ def main():
             for s in [status_g, status_k, status_d]: s.empty()
 
             def display_result(col, name, resp_data):
-                # resp_data mein ab (response, duration) ka tuple hoga
+               
                 resp, duration = resp_data
 
                 with col:
@@ -249,7 +263,7 @@ def main():
                         st.success(resp)
                        
                         
-                        # Buttons text ke liye hain, isliye audio se pehle dikha dein
+                        
                         c1, c2 ,c3= st.columns(3)
                         with c1: st.caption("👍")
                         with c2: st.caption("👎")
