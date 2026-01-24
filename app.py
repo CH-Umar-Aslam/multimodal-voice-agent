@@ -5,7 +5,6 @@ from dotenv import load_dotenv
 
 # --- IMPORTS FOR BROWSER RECORDING ---
 from streamlit_mic_recorder import mic_recorder
-import speech_recognition as sr
 from pydub import AudioSegment  # NEW: For converting WebM -> WAV
 from deepgram import DeepgramClient
 from langchain_community.vectorstores import FAISS
