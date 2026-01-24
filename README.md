@@ -28,7 +28,6 @@ The agent is strictly constrained to answer only from the ingested Sunmarke webs
 * 3-column side-by-side comparison UI
 * Secure API key handling via environment variables
 
----
 
 ## Architecture Overview
 
@@ -82,7 +81,7 @@ Prompt + Retrieved Context
 
 ### Deployment
 
-* Streamlit-compatible platform (Railway / Render / similar)
+* Streamlit community cloud
 
 ---
 
