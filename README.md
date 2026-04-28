@@ -234,6 +234,6 @@ Approximate cost per 1,000 queries:
 
 ## Author
 
-**AI Engineer – Virtuans**
+**Umar Aslam | AI Engineer**
 
 ---
