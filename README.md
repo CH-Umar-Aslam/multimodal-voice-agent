@@ -109,7 +109,7 @@ Prompt + Retrieved Context
 
 ```bash
 git clone <repository-url>
-cd virtuans-voice-agent
+cd multimodal-voice-agent
 ```
 
 ### 2. Create Virtual Environment
