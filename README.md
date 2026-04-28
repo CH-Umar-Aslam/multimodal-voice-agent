@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project is a **voice-enabled Retrieval-Augmented Generation (RAG) AI agent** built for the Virtuans.
+This project is a **voice-enabled Retrieval-Augmented Generation (RAG) AI agent** built for the acedemic institute.
 The system ingests content from **Sunmarke School’s website** and allows users to ask questions via **voice or text**.
 The same query is processed simultaneously by **three different LLMs** and the responses are presented side by side in both **text and voice** format.
 
